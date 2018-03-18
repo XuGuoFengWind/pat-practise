@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int Count_Digit ( const int N, const int D );
+
+int main()
+{
+    int N, D;
+	
+    scanf("%d %d", &N, &D);
+    printf("%d\n", Count_Digit(N, D));
+    return 0;
+}
+
+int Count_Digit (const int N,const int D)
+{
+	int k=10,i=0,j=1,m=1,n=1,count = 0;//j是记录N的位数
+	int s=N; 
+	if(N<0)
+	s=-s;
+	if(s/k == 0 && s == D)
+	{
+		count++;
+		return count;
+	}
+	else if(s/k==0 && s != D)
+	{
+		return count;
+	}
+	while(s/k != 0)
+	{
+		k=k*10;
+		j++;
+		if(s/k == 0)
+		break;
+	}
+	i=1;k=10;
+	while(i<=j)
+	{
+		if(s%k<10)
+			if(s%k==D)
+			count++;
+		if(s%k>10)
+		{
+			while(n<i)
+			{
+				m=m*10;
+				n++;
+			}
+			if(s%k/m==D)
+			count++;
+		}
+		k=k*10;
+		i++;	
+	}
+	return count;
+}
