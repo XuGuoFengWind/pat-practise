@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) 
+{
+	int m,n,j=0;
+	if(scanf("%d%d",&m,&n)!=0)
+	{
+		j=m-m%100;
+		j=j+(m%100+n%60)/60*100;
+		j=j+n/60*100;
+		m=j+(m%100+n%60)%60;
+		if(m%100>60)
+		{
+			m=m-40;
+		}
+		if(m%100==60)
+		{
+			m=m-60;
+		}
+		printf("%d",m);
+		return 0;
+	}
+	else
+	return 0;
+}
