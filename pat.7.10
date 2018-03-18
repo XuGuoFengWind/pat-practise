@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) 
+{
+	int n,m;
+	float sum;
+	scanf("%d%d",&n,&m);
+	if(n<5){
+		if(m<40)
+		sum=30*m;
+		else
+		sum=30*40+(m-40)*30*1.5;
+	}else{
+		if(m<40)
+		sum=50*m;
+		else
+		sum=50*40+(m-40)*50*1.5;
+	}
+	printf("%0.2f",sum);
+	return 0;
+}
