@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {
+	int a,b,max=0;
+	scanf("%d%d",&a,&b); /*输入两个数*/
+	int i,j,x;
+	i=a;
+	for(i;i<=b;i++)
+	{
+		x=0;
+		for(j=1;j<=i;j++)
+		{
+			if(i%j==0)
+			x++;
+		}
+		if(x>max)
+		max=x;
+	}
+	i=a;
+	for(i;i<=b;i++)
+	{
+		x=0;
+		for(j=1;j<=i;j++)
+		{
+			if(i%j==0)
+			x++;
+			if(x==max)
+			{
+				printf("%d %d",i,max);
+				return 0;
+			}	
+		}
+	}
+	return 0;
+}
